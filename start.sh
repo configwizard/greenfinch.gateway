@@ -1,6 +1,5 @@
 #!/bin/sh
 
-printenv
 
 envsubst < /default.template.conf > /etc/nginx/conf.d/default.conf
 
