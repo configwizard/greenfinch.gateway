@@ -15,6 +15,7 @@ WORKDIR /
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /go/bin/neofs-http-gw /bin/neofs-http-gw
 COPY ./start.sh /start.sh
+COPY ./proxy.nginx.conf /default.template.conf
 
 RUN chmod +x /bin/neofs-http-gw
 
