@@ -8,17 +8,28 @@ RUN go install github.com/nspcc-dev/neofs-http-gw@latest
 RUN which neofs-http-gw
 
 # Executable image
-FROM nginx
+FROM openresty/openresty:alpine-fat
+
+# Install gettext for envsubst
+RUN apk add --no-cache gettext
+
+
+RUN apk add --no-cache luarocks
+RUN luarocks install lua-resty-http && \
+    luarocks install lua-cjson
 
 WORKDIR /
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /go/bin/neofs-http-gw /bin/neofs-http-gw
 COPY ./start.sh /start.sh
+COPY ./openresty.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY ./proxy.nginx.conf /default.template.conf
 
-RUN chmod +x /bin/neofs-http-gw
+RUN mkdir -p /var/log/nginx
+RUN chmod -R 755 /var/log/nginx
 
+RUN chmod +x /bin/neofs-http-gw
 RUN chmod +x /start.sh
 
 ENTRYPOINT /start.sh

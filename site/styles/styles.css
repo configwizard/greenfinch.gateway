@@ -1,0 +1,134 @@
+/* General styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.logo {
+  width: 50px;
+  float: left;
+}
+
+.nav-links {
+  float: right;
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline;
+  padding: 0 15px;
+}
+
+.nav-links li a:hover {
+  color: #666;
+}
+
+/* Main sections */
+main {
+  padding: 40px;
+}
+
+.hero {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background-color: #666;
+}
+
+.features,
+.about,
+.endpoints,
+.contact {
+  padding: 30px 0;
+}
+
+.features h2,
+.about h2,
+.endpoints h2,
+.contact h2 {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.features ul {
+  padding-left: 20px;
+}
+
+.features li {
+  padding-bottom: 5px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.endpoints ul {
+  padding-left: 20px;
+}
+
+.endpoints li {
+  padding-bottom: 5px;
+}
+
+.contact p {
+  font-size: 18px;
+}
+.cid {
+    color: #0070f3;
+    font-weight: bold;
+}
+.oid {
+    color: #f37121;
+    font-weight: bold;
+}
+/* Footer */
+footer {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+footer p {
+  font-size: 18px;
+}
