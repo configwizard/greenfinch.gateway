@@ -3,3 +3,4 @@ wallet.*
 
 # local configuration
 .env
+*.zip
