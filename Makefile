@@ -16,4 +16,4 @@ build:
 	docker build -t greenfinch-gateway .
 
 curl:
-	http://localhost:8080/$(DEFAULT_CONTAINER_ID)/$(OID)
+	http://localhost:8080/$(DEFAULT_CONTAINER_ID)
